@@ -1,27 +1,21 @@
-// import 'package:test/test.dart';
-
-// import '../service/lms_system.dart';
-
-// void main() {
-//   test('creates a student', () {
-//     final lms = LmsSystem();
-
-//     // Create a student
-//     lms.addStudent(studentId: 'S1', studentName: "ronan");
-
-//     expect(lms.students.first.name, 'ronan');
-
-//     // Remove the student
-//     lms.removeStudent(studentId: 'S1');
-//     expect(lms.students.length, 0);
-//   });
-//  }
-
 import 'package:test/test.dart';
 
 import '../lib/service/lms_system.dart';
 
 void main() {
+  test('creates a student', () {
+    final lms = LmsSystem();
+
+    // Create a student
+    lms.addStudent(studentId: 'S1', studentName: "ronan");
+
+    expect(lms.students.first.name, 'ronan');
+
+    // Remove the student
+    lms.removeStudent(studentId: 'S1');
+    expect(lms.students.length, 0);
+  });
+
   test('Task 1: Add and remove a course', () {
     final lms = LmsSystem();
 
@@ -87,7 +81,10 @@ void main() {
       score: 85,
     );
 
-    lms.removeResult(resultId: result.id);
+    lms.removeResult(
+      studentId: result.studentId,
+      courseId: result.courseId,
+    );
 
     expect(lms.results, isEmpty);
     expect(lms.students.length, 1);

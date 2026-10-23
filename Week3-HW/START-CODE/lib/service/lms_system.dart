@@ -7,8 +7,6 @@ class LmsSystem {
   final List<Course> courses = [];
   final List<CourseResult> results = [];
 
-  int _nextResultId = 1;
-
   void addStudent({required String studentId, required String studentName}) {
     // ! Student shall not exist already
     Student? student = _findStudentOrNull(studentId);
@@ -51,7 +49,7 @@ class LmsSystem {
   //Task 1 — Add and remove courses
   void addCourse({required String courseId, required String courseName}) {
     Course? course = _findCourseOrNull(courseId);
-
+    //check whether the coursed already exists
     if (course != null) {
       throw Exception('Course $courseId already exists');
     }
@@ -75,7 +73,10 @@ class LmsSystem {
     courses.remove(course);
   }
 
-
+  //The helper method searches through the courses list using a for loop.
+  //It compares each course ID with the requested ID. If it finds a match,
+  //it returns that course.
+  //If no match exists, it returns null.
   Course? _findCourseOrNull(String courseId) {
     for (Course c in courses) {
       if (c.id == courseId) {
@@ -98,7 +99,8 @@ class LmsSystem {
     if (course == null) {
       throw Exception('Course $courseId not found');
     }
-
+    //checks whether a student is enrolled in a course
+    //before allowing to add a result or remove an enrollment
     if (course.studentIds.contains(studentId)) {
       throw Exception('Student $studentId is already enrolled');
     }
@@ -106,7 +108,7 @@ class LmsSystem {
     course.studentIds.add(studentId);
   }
 
-  //Task 3 — Remove a student from a course 
+  //Task 3 — Remove a student from a course
   void discardStudentFromCourse({
     required String studentId,
     required String courseId,
@@ -131,14 +133,13 @@ class LmsSystem {
 
     // Remove results for this student in this course.
     results.removeWhere(
-      (result) =>
-          result.studentId == studentId &&
-          result.courseId == courseId,
+      (result) => result.studentId == studentId && result.courseId == courseId,
     );
 
     // Remove only this enrollment.
     course.studentIds.remove(studentId);
   }
+
   //Task 4 — Add a result to a course
   CourseResult addResult({
     required String studentId,
@@ -168,9 +169,7 @@ class LmsSystem {
     }
     // Allow only one result per student per course.
     bool alreadyHasResult = results.any(
-      (result) =>
-          result.studentId == studentId &&
-          result.courseId == courseId,
+      (result) => result.studentId == studentId && result.courseId == courseId,
     );
 
     if (alreadyHasResult) {
@@ -178,9 +177,11 @@ class LmsSystem {
         'Student $studentId already has a result for $courseId',
       );
     }
+    //After all validation checks pass, I create a CourseResult object
+    //It contains a unique result ID, the student ID, the course ID, and the score
+    //Then I add the result to the results list and return it so the caller can access the new result.
 
     final result = CourseResult(
-      id: 'R${_nextResultId++}',
       studentId: studentId,
       courseId: courseId,
       score: score,
@@ -190,24 +191,28 @@ class LmsSystem {
 
     return result;
   }
+
   //Task 5 — Remove a student result
-  void removeResult({required String resultId}) {
-    CourseResult? result = _findResultOrNull(resultId);
+  void removeResult({
+    required String studentId,
+    required String courseId,
+  }) {
+    CourseResult? result;
+
+    for (CourseResult r in results) {
+      if (r.studentId == studentId && r.courseId == courseId) {
+        result = r;
+        break;
+      }
+    }
 
     if (result == null) {
-      throw Exception('Result $resultId not found');
+      throw Exception(
+        'Result for student $studentId in course $courseId not found',
+      );
     }
 
     results.remove(result);
   }
-
-  CourseResult? _findResultOrNull(String resultId) {
-    for (CourseResult r in results) {
-      if (r.id == resultId) {
-        return r;
-      }
-    }
-
-    return null;
-  }
 }
+
