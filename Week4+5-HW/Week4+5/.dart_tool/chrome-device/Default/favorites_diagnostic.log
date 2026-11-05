@@ -1,0 +1,22 @@
+2026-11-02 01:19:49.126: [INFO] CurrentProfilePath: C:\Users\USER\AppData\Local\Temp\flutter_tools.67de5a79\flutter_tools_chrome_device.6a01e301\Default
+2026-11-02 01:19:49.126: [INFO] Profiles total count: 1
+2026-11-02 01:19:49.126: [INFO] Profile: name=Your Chrome path=C:\Users\USER\AppData\Local\Temp\flutter_tools.67de5a79\flutter_tools_chrome_device.6a01e301\Default lastActive=null
+2026-11-02 01:19:49.126: [INFO] LastUsedProfileDir: C:\Users\USER\AppData\Local\Temp\flutter_tools.67de5a79\flutter_tools_chrome_device.6a01e301\Default
+2026-11-02 01:19:49.126: [INFO] VisibilityChanged: 0
+2026-11-02 01:19:49.200: [INFO] OnDoneLoading sync enabled: 0
+2026-11-02 01:19:49.200: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-02 01:19:49.200: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-02 01:19:49.200: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-02 01:19:49.203: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-11-02 01:21:30.147: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-03 16:22:03.012: [INFO] CurrentProfilePath: C:\Users\USER\AppData\Local\Temp\flutter_tools.d567750a\flutter_tools_chrome_device.15563e5f\Default
+2026-11-03 16:22:03.012: [INFO] Profiles total count: 1
+2026-11-03 16:22:03.012: [INFO] Profile: name=Your Chrome path=C:\Users\USER\AppData\Local\Temp\flutter_tools.d567750a\flutter_tools_chrome_device.15563e5f\Default lastActive=null
+2026-11-03 16:22:03.012: [INFO] LastUsedProfileDir: C:\Users\USER\AppData\Local\Temp\flutter_tools.d567750a\flutter_tools_chrome_device.15563e5f\Default
+2026-11-03 16:22:03.012: [INFO] VisibilityChanged: 0
+2026-11-03 16:22:03.076: [INFO] OnDoneLoading sync enabled: 0
+2026-11-03 16:22:03.076: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-03 16:22:03.076: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-03 16:22:03.076: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-03 16:22:03.078: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-11-03 16:22:51.183: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
