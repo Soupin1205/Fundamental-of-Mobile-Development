@@ -17,61 +17,89 @@
 //     ),
 //   );
 // }
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-          body: Column(
-    children: [
-      SizedBox(height: 100),
-      SizedBox(
-        height: 400,
-        child: Row(
+        backgroundColor: Colors.grey,
+        body: Column(
           children: [
+            SizedBox(
+              height: 60,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      color: Colors.purple,
+                    ),
+                  ),
+                  Container(
+                    width: 70,
+                    color: Colors.yellow,
+                  ),
+                  const SizedBox(width: 10),
+                  Container(
+                    width: 70,
+                    color: Colors.yellow,
+                  ),
+                  const SizedBox(width: 20),
+                ],
+              ),
+            ),
             Expanded(
-              child: Container(
-                color: Colors.blue,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      color: Colors.lightBlue,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    flex: 3,
+                    child: Container(
+                      color: Colors.pink,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 15,
+                      ),
+                      child: Row(
+                        mainAxisAlignment:
+                            MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 50,
+                            height: 50,
+                            color: Colors.white,
+                          ),
+                          Container(
+                            width: 50,
+                            height: 50,
+                            color: Colors.white,
+                          ),
+                          Container(
+                            width: 50,
+                            height: 50,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Container(
-              width: 100,
-              color: Colors.lightBlueAccent,
-            )
+              height: 40,
+              color: Colors.brown,
+            ),
           ],
         ),
       ),
-      SizedBox(
-        height: 100,
-        child: Row(
-          children: [
-            Expanded(
-                child: Container(
-              height: 100,
-              color: Colors.green,
-            )),
-            Container(
-                width: 100, color: const Color.fromARGB(255, 240, 47, 224)),
-          ],
-        ),
-      ),
-      SizedBox(
-        height: 100,
-        child: Row(
-          children: [
-            Expanded(child: Container(color: Colors.amber)),
-            SizedBox(width: 20),
-            Expanded(child: Container(color: Colors.amber)),
-            SizedBox(width: 20),
-            Expanded(child: Container(color: Colors.amber))
-          ],
-        ),
-      ),
-      SizedBox(height: 20),
-      Expanded(child: Container(color: const Color.fromARGB(255, 240, 47, 224)))
-    ],
-  )
-  )
-  )
+    ),
   );
 }
